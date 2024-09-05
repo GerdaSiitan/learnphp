@@ -1,32 +1,37 @@
-+<?php
+<?php
 
-$a = 1;
-$a++;
-$a--;
-$a+=2;
-$a-=2;
-$a*=2;
-$a/=2;
-$a%=2;
+class Box {
 
-$a = 'sigma' . $a;
-$a .='skibidi';
+    public $height;
+    public $width;
+    public $length;
 
-$array = ['essa' => 1,'teine' => 2,'kolm'=> 3];
-
-var_dump($array);
-
-foreach($array as $key => $value){
-    echo "$key=>$value\n";
+    public function volume(){
+        return $this->height * $this->width * $this-> length;
+    } 
 }
 
-$name = 'Rizzler';
-
-$string = "hello $name\n";
-var_dump($string);
-
-for($i=0;$i<26;$i++){
-    var_dump($char);
-    $char++;
+class MetalBox extends Box{
+    public $weightPerUnt = 10;
+    public function weight(){
+        return $this->volume() *$this->weightPerUnit;
+    }
 }
+
+$box1 = new Box();
+$box1->height = 1;
+$box1->width = 2;
+$box1->length = 3;
+var_dump($box1);
+
+$box2 = new Box();
+$box2->height = 4;
+$box2->width = 5;
+$box2->length = 6;
+var_dump($box1);    
+var_dump($box2);
+
+var_dump($box2-> volume ());
+var_dump($metal-> volume ());
+var_dump($metal-> volume ());
 ?>
