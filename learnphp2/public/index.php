@@ -21,39 +21,15 @@ require 'routes.php';
 $router = new App\Router($_SERVER['REQUEST_URI']);
 $match = $router->match();
 if($match){
-    call_user_func($match['action']);
+    if(is_callable($match['action'])){
+     call_user_func($match['action']);   
+    } else if (is_array($match['action']) && count($match['action']) === 2 ){
+        $class = $match['action'][0];
+        $controller = new $class();
+        $method = $match['action'][1];
+        $controller->$method();
+    } 
+    
 } else {
     echo 'ERROR 404';
 }
-
-// switch($_SERVER['REQUEST_URI']){
-//     case '/':
-//         $posts = [
-//             ['title' => 'Some title 1', 'body' => 'Some body 1'],
-//             ['title' => 'Some title 2', 'body' => 'Some body 2'],
-//             ['title' => 'Some title 3', 'body' => 'Some body 3'],
-//             ['title' => 'Some title 4', 'body' => 'Some body 4'],
-//         ];
-//         include 'views/index.php';
-//         break;
-//     case '/us':
-//         $posts = [
-//             ['title' => 'Some Tech title 1', 'body' => 'Some Tech body 1'],
-//             ['title' => 'Some Tech title 2', 'body' => 'Some Tech body 2'],
-//             ['title' => 'Some Tech title 3', 'body' => 'Some Tech body 3'],
-//             ['title' => 'Some Tech title 4', 'body' => 'Some Tech body 4'],
-//         ];
-//         include 'views/us.php';
-//         break;
-//     case '/tech':
-//         $posts = [
-//             ['title' => 'Some US title 1', 'body' => 'Some US body 1'],
-//             ['title' => 'Some US title 2', 'body' => 'Some US body 2'],
-//             ['title' => 'Some US title 3', 'body' => 'Some US body 3'],
-//             ['title' => 'Some US title 4', 'body' => 'Some US body 4'],
-//         ];
-//         include 'views/tech.php';
-//         break;
-//     default: 
-//         echo 'ERROR 404';
-// }
