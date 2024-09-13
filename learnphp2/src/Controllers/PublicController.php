@@ -1,5 +1,7 @@
 <?php
 
-class Publiccontroller {
-    
-};
+namespace App\Controllers;
+
+class PublicController {
+
+}
