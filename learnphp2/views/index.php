@@ -1,13 +1,3 @@
-<?php
-$posts = [
-    ['title' => 'Some title 1', 'body' => 'some body 1'],
-    ['title' => 'Some title 1', 'body' => 'some body 2'],
-    ['title' => 'Some title 1', 'body' => 'some body 3'],
-    ['title' => 'Some title 1', 'body' => 'some body 4'],
-];
-?>
-
-<?php include 'partials/header.php'; ?>
 
 <main class="container">
 
@@ -25,5 +15,3 @@ $posts = [
   </div>
 
 </main>
-
-<?php include 'partials/footer.php' ?>
