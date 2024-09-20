@@ -9,6 +9,10 @@ class PostsController
 {
     public function index(){
         $posts = Post::all();
-        include 'views/Posts/index.php';
+        include 'views/posts/index.php';
+    }
+
+    public function create() {
+        include 'views/posts/create.php';
     }
 }

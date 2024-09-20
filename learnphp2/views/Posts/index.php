@@ -1,7 +1,7 @@
 <?php include 'views/paritals/header.php'; ?>
 
 <main class="container">
-<a type="button" class="btn btn-primary">New post</a>
+<a href="/admin/posts/create" class="btn btn-primary">New post</a>
     <table class="table">
         <thead>
             <th>Id</th>

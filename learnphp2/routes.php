@@ -10,3 +10,4 @@ Route::get('/tech', [PublicController::class, 'tech']);
 Route::get('/form', [PublicController::class, 'form']);
 Route::post('/form', [PublicController::class, 'answer']);
 Route::post('/admin/posts', [PostsController::class, 'index']);
+Route::post('/admin/posts/create', [PostsController::class, 'create']);
