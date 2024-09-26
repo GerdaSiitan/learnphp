@@ -13,9 +13,9 @@ class Router {
     }
 
     public function match(){
-        foreach(self::$routes as $routes){
-            if($routes->path === $this->path && $routes->method === $this->method){
-                return $routes;
+        foreach(self::$routes as $route){
+            if($route->path === $this->path && $route->method === $this->method){
+                return $route;
             }
         }
         return false;

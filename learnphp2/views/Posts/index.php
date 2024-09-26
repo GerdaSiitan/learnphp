@@ -1,29 +1,21 @@
-<?php include 'views/paritals/header.php'; ?>
+<?php include 'partials/header.php'; ?>
 
 <main class="container">
-<a href="/admin/posts/create" class="btn btn-primary">New post</a>
-    <table class="table">
-        <thead>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Action</th>
-        </thead>
-        <tbody>
-            <?php foreach ($posts as $post): ?>
-                <tr>
-                    <td><?= $post->id ?></td>
-                    <td><?= $post->title ?></td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <a type="button" class="btn btn-info">show</a>
-                            <a type="button" class="btn btn-warning">edit</a>
-                            <a type="button" class="btn btn-danger">delete</a>
-                        </div>
-                    </td>
-                </tr>
-            <?php endforeach ?>
-        </tbody>
-    </table>
+
+  <?php include 'partials/hero.php'; ?>
+
+  <?php include 'partials/featured.php'; ?>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <?php include 'partials/posts.php'; ?>
+    </div>
+
+    <div class="col-md-4">
+      <?php include 'partials/sidebar.php'; ?>
+    </div>
+  </div>
+
 </main>
 
-<?php include 'views/paritals/footer.php'; ?>
+<?php include 'partials/footer.php'; ?>
