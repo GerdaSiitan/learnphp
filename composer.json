@@ -1,0 +1,16 @@
+{
+    "name": "60605080235/learnphp",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "60605080235\\Learnphp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "gerdasiitan",
+            "email": "gerda.siitan13@gmail.com"
+        }
+    ],
+    "require": {}
+}
