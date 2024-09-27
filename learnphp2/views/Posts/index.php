@@ -1,21 +1,29 @@
-<?php include 'partials/header.php'; ?>
+<?php include __DIR__ . '/../partials/header.php'; ?>
 
 <main class="container">
-
-  <?php include 'partials/hero.php'; ?>
-
-  <?php include 'partials/featured.php'; ?>
-
-  <div class="row g-5">
-    <div class="col-md-8">
-      <?php include 'partials/posts.php'; ?>
-    </div>
-
-    <div class="col-md-4">
-      <?php include 'partials/sidebar.php'; ?>
-    </div>
-  </div>
-
+    <a href="/admin/posts/create" class="btn btn-primary">New Post</a>
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <?php foreach ($posts as $post): ?>
+                <tr>
+                    <td><?= $post->id ?></td>
+                    <td><?= $post->title ?></td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <a class="btn btn-info">View</a>
+                            <a class="btn btn-warning" href="/admin/posts/edit?id=<?=$post->id?>">Edit</a>
+                            <a class="btn btn-danger" href="/admin/posts/delete?id=<?=$post->id?>" >Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
 </main>
 
-<?php include 'partials/footer.php'; ?>
+<?php include __DIR__ .  '/../partials/footer.php'; ?>
