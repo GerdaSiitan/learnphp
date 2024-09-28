@@ -43,13 +43,18 @@ class PostsController
         }
         redirect('/admin/posts');
     }
-
-    public function view() {
-        $post = Post::find($_GET['id']); 
-        if (!$post) {
-            return 'Post not found';
+    public function show() {
+        if (!isset($_GET['id'])) {
+            echo 'ID not provided';
+            return;
         }
-        view('posts/view');
-    }
     
+        $id = $_GET['id'];
+        $post = Post::find($id);
+        if (!$post) {
+            echo 'Post not found';
+        }
+    
+        view('posts/view', ['post' => $post]);
+    }
 }
