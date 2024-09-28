@@ -44,12 +44,13 @@ class PostsController
         redirect('/admin/posts');
     }
 
-    public function show() {
+    public function view() {
         $post = Post::find($_GET['id']); 
         if (!$post) {
             return 'Post not found';
         }
-        view('posts/show');
+        view('posts/view');
     }
+
     
 }
