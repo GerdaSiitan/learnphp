@@ -51,6 +51,5 @@ class PostsController
         }
         view('posts/view');
     }
-
     
 }
