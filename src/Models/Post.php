@@ -3,7 +3,7 @@
 namespace App\Models;
 
 class Post extends Model {
-    public static $table='posts';
+    public static $table = 'posts';
 
     public $id;
     public $title;
@@ -11,7 +11,11 @@ class Post extends Model {
     public $created_at;
     public $published_at;
 
-    public function snippet(){
-        return substr($this->body, 0, 5);
+    public function __construct() {
+        $this->created_at = date('Y-m-d H:i:s');
+    }
+
+    public function snippet() {
+        return substr($this->body, 0, 3);
     }
 }

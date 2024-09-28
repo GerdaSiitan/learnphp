@@ -16,7 +16,7 @@
         </div>
         
         <div class="mb-3">
-            <strong>Published at:</strong> <?= $post->created_at; ?>
+            <strong>Created at:</strong> <?= $post->created_at; ?>
         </div>
 
         <div class="mb-3">
