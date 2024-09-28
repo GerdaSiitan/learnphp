@@ -1,9 +1,8 @@
 {
-    "name": "60605080235/learnphp",
-    "type": "project",
+    "name": "gerda/learnphp",
     "autoload": {
         "psr-4": {
-            "60605080235\\Learnphp\\": "src/"
+            "Gerda\\Learnphp\\": "src/"
         }
     },
     "authors": [
@@ -12,5 +11,7 @@
             "email": "gerda.siitan13@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/var-dumper": "^7.1"
+    }
 }

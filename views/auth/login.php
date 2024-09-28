@@ -1,6 +1,11 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
 
 <main class="container">
+    <?php if(isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger" role="alert">
+            <?=$_SESSION['error']?>
+        </div>
+    <?php endif; ?>
     <form method="POST" action="/login">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
@@ -16,4 +21,4 @@
     </form>
 </main>
 
-<?php include __DIR__ .  '/../partials/footer.php'; ?>w
+<?php include __DIR__ .  '/../partials/footer.php'; ?>
