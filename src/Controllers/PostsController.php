@@ -6,16 +6,19 @@ use App\Models\Post;
 
 class PostsController
 {
-    public function index(){
+    public function index()
+    {
         $posts = Post::all();
         view('posts/index', compact('posts'));
     }
 
-    public function create(){
+    public function create()
+    {
         view('posts/create');
     }
 
-    public function store(){
+    public function store()
+    {
         $post = new Post();
         $post->title = $_POST['title'];
         $post->body = $_POST['body'];
@@ -23,12 +26,14 @@ class PostsController
         redirect('/admin/posts');
     }
 
-    public function edit(){
+    public function edit()
+    {
         $post = Post::find($_GET['id']);
         view('posts/edit', compact('post'));
     }
 
-    public function update(){
+    public function update()
+    {
         $post = Post::find($_GET['id']);
         $post->title = $_POST['title'];
         $post->body = $_POST['body'];
@@ -36,25 +41,32 @@ class PostsController
         redirect('/admin/posts');
     }
 
-    public function destroy(){
+    public function destroy()
+    {
         $post = Post::find($_GET['id']);
-        if($post){
+        if ($post) {
             $post->delete();
         }
         redirect('/admin/posts');
     }
-    public function show() {
+    public function show()
+    {
         if (!isset($_GET['id'])) {
             echo 'ID not provided';
             return;
         }
-    
+
         $id = $_GET['id'];
         $post = Post::find($id);
         if (!$post) {
             echo 'Post not found';
         }
-    
-        view('posts/view', ['post' => $post]);
+
+        $createdAt = $post->created_at ?? 'Not set';
+        $publishedAt = $post->published_at ?? 'Not set';
+
+        view('posts/view', ['post' => $post, 
+        'created at' => $createdAt, 
+        'published at' => $publishedAt]);
     }
 }
