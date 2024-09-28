@@ -20,7 +20,7 @@
         </div>
 
         <div class="mb-3">
-            <strong>Published at:</strong> <?= $post->published_at; ?>
+            <strong>Published at:</strong> <?= $post->updated_at; ?>
         </div>
 
         <div class="mb-3">

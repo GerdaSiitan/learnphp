@@ -9,10 +9,14 @@ class Post extends Model {
     public $title;
     public $body;
     public $created_at;
-    public $published_at;
+    public $updated_at;
 
     public function __construct() {
         $this->created_at = date('Y-m-d H:i:s');
+    }
+
+    public function __update() {
+        $this->updated_at = date('Y-m-d H:i:s');
     }
 
     public function snippet() {

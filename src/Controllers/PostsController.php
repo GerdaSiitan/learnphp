@@ -63,10 +63,10 @@ class PostsController
         }
 
         $createdAt = $post->created_at ?? 'Not set';
-        $publishedAt = $post->published_at ?? 'Not set';
+        $updatedAt = $post->updated_at ?? 'Not set';
 
         view('posts/view', ['post' => $post, 
         'created at' => $createdAt, 
-        'published at' => $publishedAt]);
+        'published at' => $updatedAt]);
     }
 }
